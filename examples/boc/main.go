@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/tonkeeper/tongo/boc"
+	"github.com/ice-hermes/tongo/boc"
 )
 
 func main() {

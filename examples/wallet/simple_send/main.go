@@ -2,10 +2,10 @@ package main
 
 import (
 	"context"
-	"github.com/tonkeeper/tongo"
-	"github.com/tonkeeper/tongo/liteapi"
-	"github.com/tonkeeper/tongo/ton"
-	"github.com/tonkeeper/tongo/wallet"
+	"github.com/ice-hermes/tongo"
+	"github.com/ice-hermes/tongo/liteapi"
+	"github.com/ice-hermes/tongo/ton"
+	"github.com/ice-hermes/tongo/wallet"
 	"log"
 )
 

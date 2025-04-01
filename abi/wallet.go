@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/tonkeeper/tongo/boc"
-	"github.com/tonkeeper/tongo/tlb"
+	"github.com/ice-hermes/tongo/boc"
+	"github.com/ice-hermes/tongo/tlb"
 )
 
 // we need to write wallets payload type manually because it can be described on tlb

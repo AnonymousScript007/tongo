@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/tonkeeper/tongo/contract/dns"
-	"github.com/tonkeeper/tongo/liteapi"
-	"github.com/tonkeeper/tongo/ton"
+	"github.com/ice-hermes/tongo/contract/dns"
+	"github.com/ice-hermes/tongo/liteapi"
+	"github.com/ice-hermes/tongo/ton"
 )
 
 func TestParseAddress(t *testing.T) {

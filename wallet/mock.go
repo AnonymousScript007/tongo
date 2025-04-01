@@ -3,8 +3,8 @@ package wallet
 import (
 	"context"
 
-	"github.com/tonkeeper/tongo/tlb"
-	"github.com/tonkeeper/tongo/ton"
+	"github.com/ice-hermes/tongo/tlb"
+	"github.com/ice-hermes/tongo/ton"
 )
 
 // SimpleMockBlockchain

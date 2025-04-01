@@ -5,7 +5,7 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/tonkeeper/tongo/tlb"
+	"github.com/ice-hermes/tongo/tlb"
 )
 
 func TestOverlayID_FullID(t *testing.T) {

@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/tonkeeper/tongo/boc"
-	"github.com/tonkeeper/tongo/tlb"
-	"github.com/tonkeeper/tongo/ton"
+	"github.com/ice-hermes/tongo/boc"
+	"github.com/ice-hermes/tongo/tlb"
+	"github.com/ice-hermes/tongo/ton"
 )
 
 type accountBuilder struct {

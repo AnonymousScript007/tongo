@@ -11,8 +11,8 @@ import (
 	"strings"
 
 	"github.com/snksoft/crc"
-	"github.com/tonkeeper/tongo/tlb"
-	"github.com/tonkeeper/tongo/utils"
+	"github.com/ice-hermes/tongo/tlb"
+	"github.com/ice-hermes/tongo/utils"
 )
 
 type AccountID struct {

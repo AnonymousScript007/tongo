@@ -10,7 +10,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/tonkeeper/tongo/boc"
+	"github.com/ice-hermes/tongo/boc"
 )
 
 var ErrGramsOverflow = errors.New("grams overflow")
@@ -36,7 +36,7 @@ func (g *Grams) UnmarshalTLB(c *boc.Cell, decoder *Decoder) error {
 		return err
 	}
 	if ln > 8 {
-		return ErrGramsOverflow
+		ln = 8
 	}
 	var amount uint64
 	for i := 0; i < int(ln); i++ {

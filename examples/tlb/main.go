@@ -3,10 +3,10 @@ package main
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/tonkeeper/tongo"
+	"github.com/ice-hermes/tongo"
 
-	"github.com/tonkeeper/tongo/boc"
-	"github.com/tonkeeper/tongo/tlb"
+	"github.com/ice-hermes/tongo/boc"
+	"github.com/ice-hermes/tongo/tlb"
 )
 
 // You can serialize and deserialize (to/from Cells) structures described by TL-B schemas.
