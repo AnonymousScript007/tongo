@@ -57,6 +57,8 @@ The list below contains the supported message operations, their names and opcode
 | HipoFinanceProxyTokensMinted| 0x5be57626 |
 | HipoFinanceTokensMinted| 0x5445efee |
 | InitPaymentChannel| 0x0e0620c2 |
+| InvoicePayload| 0x7aa23eb5 |
+| InvoicePayload| 0x7aa23eb5 |
 | JettonBurn| 0x595f07bc |
 | JettonBurnNotification| 0x7bdd97de |
 | JettonCallTo| 0x235caf52 |
@@ -170,6 +172,8 @@ The list below contains the supported message operations, their names and opcode
 | TextComment| 0x00000000 |
 | TextComment| 0x00000000 |
 | TextComment| 0x00000000 |
+| Tonkeeper2FaSigned| 0x53684037 |
+| Tonkeeper2FaSignedExternal| 0x00000000 |
 | TonkeeperRelayerFee| 0x878da6e3 |
 | TonstakeControllerNewStake| 0xe0505d0e |
 | TonstakeControllerPoolHalt| 0x139a1b4e |

@@ -95,6 +95,11 @@ type DedustSwapStepParams struct {
 	Next    *DedustSwapStep `tlb:"maybe^"`
 }
 
+type PaymentProviderUrl struct {
+	Magic   tlb.Magic `tlb:"#01"`
+	Address tlb.Bits256
+}
+
 type JettonForceAction struct {
 	tlb.SumType
 	SetStatus struct {
@@ -420,6 +425,71 @@ type TelemintUnsignedDeployV2 struct {
 	AuctionConfig TeleitemAuctionConfig `tlb:"^"`
 	RoyaltyParams *NftRoyaltyParams     `tlb:"maybe^"`
 	Restrictions  *TelemintRestrictions `tlb:"maybe^"`
+}
+
+type Certificate2Fa struct {
+	Data      CertificateData2Fa
+	Signature tlb.Bits512
+}
+
+type CertificateData2Fa struct {
+	ValidUntil uint64
+	Pubkey     tlb.Bits256
+}
+
+type Payload2Fa struct {
+	tlb.SumType
+	SendActions struct {
+		Seqno      uint32
+		ValidUntil uint64
+		Msg        tlb.Any `tlb:"^"`
+		Mode       uint8
+	} `tlbSumType:"#b15f2c8c"`
+	RemoveExtension struct {
+		Seqno      uint32
+		ValidUntil uint64
+	} `tlbSumType:"#9d8084d6"`
+	Delegation struct {
+		Seqno         uint32
+		ValidUntil    uint64
+		NewStateInit  tlb.Any `tlb:"^"`
+		ForwardAmount tlb.Grams
+	} `tlbSumType:"#23d9c15c"`
+	CancelDelegation struct {
+		Seqno      uint32
+		ValidUntil uint64
+	} `tlbSumType:"#de82b501"`
+}
+
+func (t *Payload2Fa) MarshalJSON() ([]byte, error) {
+	switch t.SumType {
+	case "SendActions":
+		bytes, err := json.Marshal(t.SendActions)
+		if err != nil {
+			return nil, err
+		}
+		return []byte(fmt.Sprintf(`{"SumType": "SendActions","SendActions":%v}`, string(bytes))), nil
+	case "RemoveExtension":
+		bytes, err := json.Marshal(t.RemoveExtension)
+		if err != nil {
+			return nil, err
+		}
+		return []byte(fmt.Sprintf(`{"SumType": "RemoveExtension","RemoveExtension":%v}`, string(bytes))), nil
+	case "Delegation":
+		bytes, err := json.Marshal(t.Delegation)
+		if err != nil {
+			return nil, err
+		}
+		return []byte(fmt.Sprintf(`{"SumType": "Delegation","Delegation":%v}`, string(bytes))), nil
+	case "CancelDelegation":
+		bytes, err := json.Marshal(t.CancelDelegation)
+		if err != nil {
+			return nil, err
+		}
+		return []byte(fmt.Sprintf(`{"SumType": "CancelDelegation","CancelDelegation":%v}`, string(bytes))), nil
+	default:
+		return nil, fmt.Errorf("unknown sum type %v", t.SumType)
+	}
 }
 
 type AccountLists struct {
