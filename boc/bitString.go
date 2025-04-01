@@ -181,7 +181,7 @@ func (s *BitString) mustReadBit() bool {
 
 func (s *BitString) Skip(n int) error {
 	if s.BitsAvailableForRead() < n {
-		return ErrNotEnoughBits
+		return errors.New("Skip: not enough bits")
 	}
 	s.rCursor += n
 	return nil
@@ -189,7 +189,7 @@ func (s *BitString) Skip(n int) error {
 
 func (s *BitString) ReadBit() (bool, error) {
 	if s.BitsAvailableForRead() < 1 {
-		return false, ErrNotEnoughBits
+		return false, errors.New("ReadBit: not enough bits")
 	}
 	var bit = s.mustGetBit(s.rCursor)
 	s.rCursor++
@@ -198,7 +198,7 @@ func (s *BitString) ReadBit() (bool, error) {
 
 func (s *BitString) ReadBigUint(bitLen int) (*big.Int, error) {
 	if s.BitsAvailableForRead() < bitLen {
-		return nil, ErrNotEnoughBits
+		return nil, errors.New("ReadBigUint: not enough bits")
 	}
 	if bitLen == 0 {
 		return big.NewInt(0), nil
@@ -223,7 +223,7 @@ func (s *BitString) ReadBigUint(bitLen int) (*big.Int, error) {
 
 func (s *BitString) ReadBigInt(bitLen int) (*big.Int, error) {
 	if s.BitsAvailableForRead() < bitLen {
-		return nil, ErrNotEnoughBits
+		return nil, errors.New("ReadBigInt: not enough bits")
 	}
 	if bitLen == 0 {
 		return big.NewInt(0), nil
@@ -251,7 +251,7 @@ func (s *BitString) ReadUint(bitLen int) (uint64, error) {
 		return 0, fmt.Errorf("too much bits for uint64")
 	}
 	if s.BitsAvailableForRead() < bitLen {
-		return 0, ErrNotEnoughBits
+		return 0, errors.New("ReadUint: not enough bits")
 	}
 	var res uint64
 	if s.rCursor&0b111 == 0 && bitLen&0b111 == 0 {
@@ -296,7 +296,7 @@ func (s *BitString) ReadInt(bitLen int) (int64, error) {
 		return 0, fmt.Errorf("integer can't be zero size")
 	}
 	if s.BitsAvailableForRead() < bitLen {
-		return 0, ErrNotEnoughBits
+		return 0, errors.New("ReadInt: not enough bits")
 	}
 
 	if bitLen == 1 {
@@ -321,7 +321,7 @@ func (s *BitString) ReadInt(bitLen int) (int64, error) {
 
 func (s *BitString) ReadByte() (byte, error) {
 	if s.BitsAvailableForRead() < 8 {
-		return 0, ErrNotEnoughBits
+		return 0, errors.New("ReadByte: not enough bits")
 	}
 	bCursor := s.rCursor >> 3
 	if s.rCursor&0b111 == 0 {
@@ -336,7 +336,7 @@ func (s *BitString) ReadByte() (byte, error) {
 
 func (s *BitString) ReadBytes(size int) ([]byte, error) {
 	if s.BitsAvailableForRead() < size*8 {
-		return nil, ErrNotEnoughBits
+		return nil, errors.New("ReadBytes: not enough bits")
 	}
 	if s.rCursor&0b111 == 0 {
 		rCursor := s.rCursor
