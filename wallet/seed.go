@@ -11,7 +11,7 @@ import (
 
 	"golang.org/x/crypto/pbkdf2"
 
-	"github.com/tonkeeper/tongo/boc"
+	"github.com/ice-hermes/tongo/boc"
 )
 
 func RandomSeed() string {

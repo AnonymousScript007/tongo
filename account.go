@@ -10,11 +10,11 @@ import (
 	"time"
 
 	"github.com/snksoft/crc"
-	"github.com/tonkeeper/tongo/abi"
-	"github.com/tonkeeper/tongo/contract/dns"
-	"github.com/tonkeeper/tongo/liteapi"
-	"github.com/tonkeeper/tongo/tlb"
-	"github.com/tonkeeper/tongo/ton"
+	"github.com/ice-hermes/tongo/abi"
+	"github.com/ice-hermes/tongo/contract/dns"
+	"github.com/ice-hermes/tongo/liteapi"
+	"github.com/ice-hermes/tongo/tlb"
+	"github.com/ice-hermes/tongo/ton"
 )
 
 const (

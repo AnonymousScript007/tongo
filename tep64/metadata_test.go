@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/tonkeeper/tongo/boc"
+	"github.com/ice-hermes/tongo/boc"
 )
 
 func TestDecodeFullContentFromCell(t *testing.T) {

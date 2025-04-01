@@ -1,7 +1,7 @@
 package tongo
 
 import (
-	"github.com/tonkeeper/tongo/ton"
+	"github.com/ice-hermes/tongo/ton"
 )
 
 type Transaction = ton.Transaction

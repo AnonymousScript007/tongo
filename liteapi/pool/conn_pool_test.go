@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tonkeeper/tongo/liteclient"
-	"github.com/tonkeeper/tongo/ton"
+	"github.com/ice-hermes/tongo/liteclient"
+	"github.com/ice-hermes/tongo/ton"
 )
 
 type mockConn struct {

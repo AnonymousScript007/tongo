@@ -8,10 +8,10 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/tonkeeper/tongo"
-	"github.com/tonkeeper/tongo/contract/jetton"
-	"github.com/tonkeeper/tongo/liteapi"
-	"github.com/tonkeeper/tongo/wallet"
+	"github.com/ice-hermes/tongo"
+	"github.com/ice-hermes/tongo/contract/jetton"
+	"github.com/ice-hermes/tongo/liteapi"
+	"github.com/ice-hermes/tongo/wallet"
 )
 
 func main() {

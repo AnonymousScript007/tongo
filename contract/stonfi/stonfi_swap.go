@@ -4,12 +4,12 @@ import (
 	"context"
 	"math/big"
 
-	"github.com/tonkeeper/tongo/abi"
-	"github.com/tonkeeper/tongo/boc"
-	"github.com/tonkeeper/tongo/contract/jetton"
-	"github.com/tonkeeper/tongo/liteapi"
-	"github.com/tonkeeper/tongo/tlb"
-	"github.com/tonkeeper/tongo/ton"
+	"github.com/ice-hermes/tongo/abi"
+	"github.com/ice-hermes/tongo/boc"
+	"github.com/ice-hermes/tongo/contract/jetton"
+	"github.com/ice-hermes/tongo/liteapi"
+	"github.com/ice-hermes/tongo/tlb"
+	"github.com/ice-hermes/tongo/ton"
 )
 
 // Stonfi creates a swap message.

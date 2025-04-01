@@ -7,12 +7,12 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/tonkeeper/tongo/abi"
-	"github.com/tonkeeper/tongo/boc"
-	"github.com/tonkeeper/tongo/tep64"
-	"github.com/tonkeeper/tongo/tlb"
-	"github.com/tonkeeper/tongo/ton"
-	"github.com/tonkeeper/tongo/wallet"
+	"github.com/ice-hermes/tongo/abi"
+	"github.com/ice-hermes/tongo/boc"
+	"github.com/ice-hermes/tongo/tep64"
+	"github.com/ice-hermes/tongo/tlb"
+	"github.com/ice-hermes/tongo/ton"
+	"github.com/ice-hermes/tongo/wallet"
 )
 
 type blockchain interface {

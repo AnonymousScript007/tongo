@@ -5,9 +5,9 @@ import (
 	"encoding/base64"
 	"time"
 
-	"github.com/tonkeeper/tongo"
-	"github.com/tonkeeper/tongo/boc"
-	"github.com/tonkeeper/tongo/tlb"
+	"github.com/ice-hermes/tongo"
+	"github.com/ice-hermes/tongo/boc"
+	"github.com/ice-hermes/tongo/tlb"
 )
 
 // ProofOptions configures particular aspects of a proof.

@@ -5,9 +5,9 @@ import (
 	"math"
 	"testing"
 
-	"github.com/tonkeeper/tongo/tlb"
-	"github.com/tonkeeper/tongo/ton"
-	"github.com/tonkeeper/tongo/tvm"
+	"github.com/ice-hermes/tongo/tlb"
+	"github.com/ice-hermes/tongo/ton"
+	"github.com/ice-hermes/tongo/tvm"
 )
 
 func TestGetExtendedParticipantList(t *testing.T) {

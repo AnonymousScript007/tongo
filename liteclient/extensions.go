@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/tonkeeper/tongo/tl"
-	"github.com/tonkeeper/tongo/ton"
+	"github.com/ice-hermes/tongo/tl"
+	"github.com/ice-hermes/tongo/ton"
 )
 
 var (
