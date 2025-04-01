@@ -36,7 +36,7 @@ func (g *Grams) UnmarshalTLB(c *boc.Cell, decoder *Decoder) error {
 		return err
 	}
 	if ln > 8 {
-		return ErrGramsOverflow
+		return errors.New("UnmarshalTLB(grams): grams overflow")
 	}
 	var amount uint64
 	for i := 0; i < int(ln); i++ {
@@ -72,7 +72,7 @@ func (g *SignedCoins) UnmarshalTLB(c *boc.Cell, decoder *Decoder) error {
 		return err
 	}
 	if ln > 8 {
-		return ErrGramsOverflow
+		return errors.New("UnmarshalTLB(signed_coins): grams overflow")
 	}
 	var amount uint64
 	for i := 0; i < int(ln); i++ {
@@ -83,7 +83,7 @@ func (g *SignedCoins) UnmarshalTLB(c *boc.Cell, decoder *Decoder) error {
 		amount = uint64(b) | (amount << 8)
 	}
 	if amount > 1<<63 {
-		return ErrGramsOverflow
+		return errors.New("UnmarshalTLB(signed_coins-amount): grams overflow")
 	}
 	if negative {
 		amount = -amount
